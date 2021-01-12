@@ -29,7 +29,7 @@ section .book{
     box-shadow: 20px 20px 20px rgb(0, 0, 0,0.2);
     
     transform-style: preserve-3d;
-    transition: 0.5;
+    transition: 0.5s;
 }
 
 
@@ -45,6 +45,7 @@ section .book img{
 
 /* une la cara con el lado izquierdo y lo rota 90 grados hacia adentro */
 section .book::before{
+    /* lado pequeño izquierdo */
     content: "";
     position: absolute;
     width: 60px;
@@ -58,4 +59,25 @@ section .book::before{
 /* cuando se hace hover se puede ver el lado izquierdo unido con la cara */
 section .book:hover{
     transform: rotateY(35deg);
+    box-shadow: 0px 20px 20px rgb(0, 0, 0,0.2);
+}
+
+/* al hacer doble click sin soltar se ve como gira 180 grados, se da la vuelta */
+section .book:active{
+    transform: rotateY(180deg);
+    box-shadow: 0px 20px 20px rgb(0, 0, 0,0.2);
+}
+
+/* une la cara con atras y lo rota 90 grados hacia adentro */
+section .book::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    background: url("images/back.jpg");
+    background-position: center;
+    transform: rotateY(180deg)
+    /* con esta linea hace que quede cuadrado como un libro grueso */
+    translateZ(60px);
 }
