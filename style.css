@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* poniendo elemento de body al centro */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* section al centro */
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* LIBRO */
+section .book{
+    position: relative;
+    width: 383px;
+    height: 567px;
+    box-shadow: 20px 20px 20px rgb(0, 0, 0,0.2);
+}
+
+section .book img{
+    position: absolute;
+    /* acomodando el libro dentro de .book h y w */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
